@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col s9">
+    <h3 class="center">Project Setup</h2>
+    <p class="flow-text">
+      The first thing we'll do is set up our project directory. We'll have a
+      single project folder with our Rails and Ember app inside. We'll keep both
+      apps under one <code>git</code> repo*. In your terminal
+      <code>
+        <blockquote>
+          <p class="flow-text">mkdir portfolio-app</p>
+          <p class="flow-text">cd portfolio-app</p>
+          <p class="flow-text">git init</p>
+        </blockquote>
+      </code>
+    </p>
+
+    <p class="flow-text">
+      Let's make our Rails and Ember apps:
+      <code>
+        <blockquote>
+          <p class="flow-text">rails-api new portfolio-app --database=postgresql -T</p>
+          <p class="flow-text">mv portfolio-app backend</p>
+          <p class="flow-text">ember new porfolio-app --directory frontend --skip-git</p>
+        </blockquote>
+      </code>
+    </p>
+
+    <p class="flow-text">
+      The first step will create a Rails API with a postgres database. I use the
+      <code>-T</code> flag because I don't want the default testing framework.
+      The second command renames our Rails API directory from
+      <code>portfolio-app</code> to <code>backend</code>. I prefer to do it
+      this way and not just <code>rails-api new backend</code> because I don't want
+      the application name to actually be <code>Backend</code>. The ember app we can
+      pass the <code>--directory</code> flag to accomplish the same thing. We skip
+      <code>git</code> since we've already initialized it in the folder we're currently in.
+    </p>
+
+    <div class="card-panel teal lighten-4">
+      * In production you'll probably want to keep your API and Ember App under
+      seperate version control, but for simplicity's sake we'll use one
+      <code>git</code> repo.
+    </div>
+  </div>
+  <div class="col s3">
+    Sidebar
+  </div>
+</div>
